@@ -11,7 +11,6 @@
 // [x] remover repetição de código
 // [x] anonymous function
 // [x] arrow function
-// [] template string
 
 const corpo = document.querySelector("body");
 const botao = document.getElementById("trocaCor");
