@@ -1,10 +1,10 @@
 // 1.
-// [] adicionar a tag <script> no html
-// [] verificar se está lendo index.js
-// [] alterar cor de <body>
-// [] escutar o clique do botão
-// [] criar função de alterar a cor usando rgb()
-// [] usar Math.random() e Math.floor() ou parseInt()
+// [x] adicionar a tag <script> no html
+// [x] verificar se está lendo index.js
+// [x] alterar cor de <body>
+// [x] escutar o clique do botão
+// [x] criar função de alterar a cor usando rgb()
+// [x] usar Math.random() e Math.floor() ou parseInt()
 
 // ------------------------------------------------------------------------
 // 2. melhorando o código
@@ -13,19 +13,16 @@
 // [x] arrow function
 // [x] template string
 
-const body = document.body;
-const botao = document.getElementById('trocaCor');
+const corpo = document.querySelector("body");
+const botao = document.getElementById("trocaCor");
 
-body.style.backgroundColor = 'purple';
-botao.addEventListener('click', mudaBody)
+corpo.style.backgroundColor = "purple";
+botao.addEventListener("click", mudaBody);
 
-// body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+function mudaBody () {
+  const mudaColor = new MudaCor();
+  corpo.style.backgroundColor = mudaColor.geraRGB();
 
-function mudaBody() {
-  // const mudaC = new MudaCor()
-  body.style.backgroundColor = new MudaCor().geraRGB();
+  // Também podemos instanciar direto:
+  // corpo.style.backgroundColor = new MudaCor().geraRGB();
 }
-
-// console.log('mudaC', mudaC);
-// console.log('r', mudaC.r);
-// console.log(mudaC.geraRGB());

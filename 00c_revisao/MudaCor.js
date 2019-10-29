@@ -1,13 +1,16 @@
+// Classes
 class MudaCor {
-  constructor() {
-    this.r = this.geraInteiro(255);
-    this.g = this.geraInteiro(255);
-    this.b = this.geraInteiro(255);
-  }
-  geraInteiro(num) {
-    return parseInt(Math.random() * num)
-  };
-  geraRGB() {
-    return `rgb(${this.r}, ${this.g}, ${this.b})`;
-  }
+    constructor() {
+        this.r = this.geraNumero(255);
+        this.g = this.geraNumero(255);
+        this.b = this.geraNumero(255);
+    };
+
+    geraNumero(num) {
+        return Math.floor(Math.random() * num);
+    };
+
+    geraRGB() {
+        return `rgb(${this.r}, ${this.g}, ${this.b})`;
+    }
 };
