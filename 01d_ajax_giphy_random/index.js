@@ -48,24 +48,24 @@ function mostraGif() {
 
 // Outra forma de incluir os elementos dentro do body:
 
-function mostraGif() {
+// function mostraGif() {
 
-    if (request.readyState === 4 && request.status === 200) {
-        const response = request.response;
-        const json = JSON.parse(response);
-        const corpo = document.body;
+//     if (request.readyState === 4 && request.status === 200) {
+//         const response = request.response;
+//         const json = JSON.parse(response);
+//         const corpo = document.body;
 
-        corpo.innerHTML = `
-        <img src=${json.data[0].images.original.url}>
-        <img src=${json.data[1].images.original.url}>
-        <img src=${json.data[2].images.original.url}>
-        `
-    }
-}
+//         corpo.innerHTML = `
+//         <img src=${json.data[0].images.original.url}>
+//         <img src=${json.data[1].images.original.url}>
+//         <img src=${json.data[2].images.original.url}>
+//         `
+//     }
+// }
 
 const termoBuscado = "most+cute+cats";
 
 const url = `http://api.giphy.com/v1/gifs/search?q=${termoBuscado}&api_key=dc6zaTOxFJmzC&limit=3&offset=0`
 
 request.open("GET", url);
-request.send();
+request.send(null);
