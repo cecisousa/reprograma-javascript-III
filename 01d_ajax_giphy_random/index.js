@@ -1,4 +1,4 @@
-// [] XMLHttpRequest ddo gif
+// [] XMLHttpRequest do gif
 // [] adicionar a tag <script> no html
 // [] verificar se está lendo index.js
 // [] usar o método fetch() para a url da API Giphy
