@@ -1,11 +1,11 @@
-// [] instanciar XMLHttpRequest()
-// [] o que fazer depois que receber a resposta
-// [] fazer a requisição com open() e send()
-// [] tratar response
+// [x] instanciar XMLHttpRequest()
+// [x] o que fazer depois que receber a resposta
+// [x] fazer a requisição com open() e send()
+// [x] tratar response
 
 
 
-// [] iterar sobre o array e mostrar as três imagens usando for()
+// [x] iterar sobre o array e mostrar as três imagens usando for()
 // [] iterar sobre o array e mostrar as três imagens usando for...of
 // [] iterar sobre o array e mostrar as três imagens usando forEach
 
@@ -49,11 +49,21 @@ function getFotos() {
     if (request.readyState === 4 && request.status === 200) {
         const response = request.response;
         const json = JSON.parse(response);
+        const data = json.data;
         
-        for (let i = 0; i < json.data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             const img = document.createElement("img");
             div.appendChild(img);
-            img.src = json.data[i].imagem;
+            img.src = data[i].imagem;
+            const txt  = document.createElement("p");
+            div.appendChild(txt);
+            txt.textContent = data[i].nome;
+
+            // outra forma de criar o for:
+            // const element = data[i];
+            // const img = `<img src=${element.imagem}>`;
+            // div.innerHTML += img
+
         }
     } else  {
         console.log(request.readyState, request.status);
