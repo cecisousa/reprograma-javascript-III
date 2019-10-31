@@ -20,15 +20,22 @@ btn.addEventListener("click", function(evento){
         if (request.readyState === 4 && request.status === 200) {
             const response = request.response;
             const json = JSON.parse(response);
-            const img1 = document.createElement("img");
-            div.appendChild(img1);
-            img1.src = json.data[0].images.original.url;
-            const img2 = document.createElement("img");
-            div.appendChild(img2);
-            img2.src = json.data[1].images.original.url;
-            const img3 = document.createElement("img");
-            div.appendChild(img3);
-            img3.src = json.data[2].images.original.url;
+            // const img1 = document.createElement("img");
+            // div.appendChild(img1);
+            // img1.src = json.data[0].images.original.url;
+            // const img2 = document.createElement("img");
+            // div.appendChild(img2);
+            // img2.src = json.data[1].images.original.url;
+            // const img3 = document.createElement("img");
+            // div.appendChild(img3);
+            // img3.src = json.data[2].images.original.url;
+
+            for (const position of json.data) {
+            const img = document.createElement("img");
+            div.appendChild(img);
+            img.src = position.images.original.url;
+            } 
+
         } else {
             console.log(request.readyState, request.status);
         }
