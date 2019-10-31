@@ -4,7 +4,7 @@
 
 const request = new XMLHttpRequest();
 const input = document.getElementById("gifInput");
-const body = document.body;
+const div = document.getElementById("root");
 const btn = document.getElementById("gifButton");
 
 btn.addEventListener("click", function(evento){
@@ -20,10 +20,15 @@ btn.addEventListener("click", function(evento){
         if (request.readyState === 4 && request.status === 200) {
             const response = request.response;
             const json = JSON.parse(response);
-            const img = document.createElement("img");
-            body.appendChild(img);
-            img.src = json.data[1].images.original.url;
-            console.log(img.src)
+            const img1 = document.createElement("img");
+            div.appendChild(img1);
+            img1.src = json.data[0].images.original.url;
+            const img2 = document.createElement("img");
+            div.appendChild(img2);
+            img2.src = json.data[1].images.original.url;
+            const img3 = document.createElement("img");
+            div.appendChild(img3);
+            img3.src = json.data[2].images.original.url;
         } else {
             console.log(request.readyState, request.status);
         }
