@@ -10,7 +10,9 @@ const btn = document.getElementById("gifButton");
 btn.addEventListener("click", function(evento){
     request.onreadystatechange = pesquisaGif;
     evento.preventDefault();
+    div.innerHTML = "";
     const textoBuscado = input.value;
+    input.value = "";
     const chaveAPI = "dc6zaTOxFJmzC";
     const url = `http://api.giphy.com/v1/gifs/search?q=${textoBuscado}&api_key=${chaveAPI}&limit=3&offset=0`
     request.open("GET", url);
@@ -34,7 +36,7 @@ btn.addEventListener("click", function(evento){
             const img = document.createElement("img");
             div.appendChild(img);
             img.src = position.images.original.url;
-            } 
+            }
 
         } else {
             console.log(request.readyState, request.status);
